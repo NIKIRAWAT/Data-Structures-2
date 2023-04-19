@@ -1,0 +1,8 @@
+max_len=0
+        for i in range(N):
+            if S[i]=='1' and abs(i-max_len)<=X:
+                max_len=max(max_len,i+X+1)
+        if max_len>=N:
+            return 1
+        else:
+            return 0
