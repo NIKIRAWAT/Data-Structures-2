@@ -1,0 +1,16 @@
+l=list(arr)
+        l.sort()
+        
+        prefix={}
+        sum_=0
+        
+        for i in l:
+            if i not in prefix:
+                prefix[i]=sum_ 
+            sum_+=i 
+            
+        res=[]
+        for i in range(n):
+            res.append(prefix[arr[i]])
+            
+        return res
