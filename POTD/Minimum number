@@ -1,0 +1,9 @@
+import math
+from math import gcd
+class Solution:
+    def minimumNumber(self, n, arr):
+        ans = arr[0]
+        n = len(arr)
+        for i in range(n):
+            ans=gcd(ans,arr[i])
+        return (ans)
