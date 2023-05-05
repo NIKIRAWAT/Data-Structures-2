@@ -1,0 +1,20 @@
+class Solution:
+    def goodSubtrees(self, root, k):
+        #code here
+        self.ans=0
+        def help(root):
+            s=set()
+            if not root:
+                return None
+            l=help(root.left)
+            r=help(root.right)
+            s.add(root.data)
+            if l:
+                s=s|l
+            if r:
+                s=s | r
+            if len(s)<=k:
+                self.ans+=1
+            return s
+        help(root)
+        return self.ans
