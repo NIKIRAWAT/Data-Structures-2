@@ -1,0 +1,12 @@
+def makeChanges(self, N : int, k : int, target : int, coins : List[int]) -> bool:
+        dp = [[0]*(k+1) for _ in range(target+1)]
+        dp[0][0] = 1
+        coins.sort()
+        for t in range(target):
+            for n in range(k):
+                for coin in coins:
+                    if t+1-coin < 0:
+                        break
+                    dp[t+1][n+1] += dp[t+1-coin][n]
+
+        return dp[target][k]
