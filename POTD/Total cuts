@@ -1,0 +1,11 @@
+from typing import List
+class Solution:
+    def totalCuts(self, N : int, K : int, A : List[int]) -> int:
+        count=0
+        for i in range(1,N):
+            maxx=max(A[:i])
+            mini=min(A[i:])
+            if (mini+maxx)>=K:
+                count=N-i
+                break
+        return count
