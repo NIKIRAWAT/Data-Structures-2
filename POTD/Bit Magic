@@ -1,0 +1,9 @@
+from typing import List
+
+class Solution:
+    def bitMagic(self, n : int, arr : List[int]) -> int:
+        c=0
+        for a in range(0,int(n/2)):
+            if arr[a] != arr[n-1-a]:
+                c+=1
+        return (c//2 + c%2)
