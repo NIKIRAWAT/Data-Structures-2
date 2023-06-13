@@ -1,0 +1,8 @@
+class Solution:
+
+	def kLargest(self,arr, n, k):
+		# code here
+		arr.sort()
+		arr[:]=arr[::-1]
+		arr[:]=arr[:k]
+		return arr
